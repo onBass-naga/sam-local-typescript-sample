@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5", // TSはECMAScript 5に変換
+    "lib": [
+      "es2017"
+    ],
+    "baseUrl": "src",
+    "paths": {
+      "*": ["main/*", "environments/local/*"]
+      // "*": ["main/*", "environments/prod/*""]
+    },
+    "sourceMap": true
+  }
+}
