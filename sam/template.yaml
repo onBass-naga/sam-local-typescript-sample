@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: SAM Local test
+Resources:
+  HelloEnv:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../.dist/helloEnv
+      Handler: index.handler
+      Runtime: nodejs6.10
+      Role: !Ref LambdaSampleRole
+      Environment:
+        Variables:
+          ENV_MESSAGE: !Ref EnvMessage
+  S3Read:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ../.dist/s3Handler
+      Handler: index.handler
+      Runtime: nodejs6.10
+      Role: !Ref LambdaSampleRole
