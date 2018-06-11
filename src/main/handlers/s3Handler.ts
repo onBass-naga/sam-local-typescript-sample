@@ -9,6 +9,7 @@ export function handler(event: S3PutEvent, context: Context, callback: Callback)
 
   context.logGroupName = 'S3Handler'
   // context.logStreamName = 'S3Handler'
+  logger.printLogInfo()
   logger.info("read S3 start")
   logger.debug(JSON.stringify(event))
 

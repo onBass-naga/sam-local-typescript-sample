@@ -6,6 +6,7 @@ const logger = new Logger()
 
 export function handler(event: any, context: Context, callback: Callback) {
 
+  logger.printLogInfo()
   logger.info("helloEnv start")
   logger.debug(JSON.stringify(event))
 

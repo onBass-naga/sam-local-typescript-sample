@@ -13,7 +13,6 @@ class Logger {
   public constructor() {
     const envLevel = process.env.LOG_LEVEL ? process.env.LOG_LEVEL : ''
     this.level = this.initLevel(envLevel.toLowerCase())
-    console.log(`log level: ${this.level}`)
   }
 
   private initLevel(logLevel: string): number {
@@ -23,6 +22,10 @@ class Logger {
         : logLevel === 'debug' ? Logger.LEVEL_DEBUG
         : logLevel === 'trace' ? Logger.LEVEL_TRACE
         : Logger.LEVEL_DEFAULT
+  }
+
+  printLogInfo() {
+    console.log(`process.env.LOG_LEVEL: ${process.env.LOG_LEVEL}, log level: ${this.level}`)
   }
 
   error(log) {
