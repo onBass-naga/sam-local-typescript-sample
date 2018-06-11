@@ -11,7 +11,7 @@
     "build-prod": "webpack --config ./build/webpack.config.js --env=prod",
     "build": "webpack --config ./build/webpack.config.js",
     "watch": "webpack --config ./build/webpack.config.js --watch",
-    "test": "NODE_PATH=src/main/:src/environments/local ./node_modules/.bin/mocha --require espower-typescript/guess ./src/test/**/*.ts"
+    "test": "NODE_PATH=src/main/:src/environments/ut ./node_modules/.bin/mocha --require espower-typescript/guess ./src/test/**/*.ts"
   },
   "devDependencies": {
     "@types/aws-lambda": "0.0.21",

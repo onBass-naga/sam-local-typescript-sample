@@ -26,7 +26,7 @@ $ ./setup.sh
 ## run local
 
 ```
-sam local invoke --event payload/s3_event.json --t template.yaml \
+sam local invoke --event sam/payload/s3_event.json --t sam/template.yaml \
   --docker-network localstack_default S3Read
 ```
 
