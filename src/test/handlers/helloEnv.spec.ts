@@ -9,6 +9,6 @@ describe('helloEnv', () => {
     const callback = (err, success) => {actual = success}
     hello.handler(null, null, callback)
 
-    assert(actual.message === "hello local")
+    assert(actual.message === "hello ut")
   })
 })

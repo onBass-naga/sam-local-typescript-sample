@@ -1,6 +1,7 @@
 import * as assert from 'power-assert';
-import * as mocha from "mocha";
+import * as mocha from 'mocha';
 import * as s3Handler from 'handlers/s3Handler';
+import { MockContext } from './MockContext'
 
 describe('s3Handler', () => {
 
@@ -8,10 +9,10 @@ describe('s3Handler', () => {
     
     const callback = (err, success) => {
       assert(success.statusCode === 200)
-      assert(success.body === "{\"s3data\":\"mock data\"}")
+      assert(success.body === "{\"objectNames\":[\"test.txt\"]}")
       done()
     }
-    s3Handler.handler(event, null, callback)
+    s3Handler.handler(event, new MockContext(), callback)
   })
 })
 
